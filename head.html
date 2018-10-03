@@ -1,0 +1,123 @@
+<?php define('BASE_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/ARMAMENTO/'); ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ARCO</title>
+        <link rel="icon" href="<?php echo BASE_URL;?>dist/img/pa2.png" type="image/ico" />
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <!-- Bootstrap 3.3.7 -->
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>bower_components/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>bower_components/Ionicons/css/ionicons.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>dist/css/AdminLTE.min.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>dist/css/skins/_all-skins.min.css">
+        <!-- Morris chart -->
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>bower_components/morris.js/morris.css">
+        <!-- jvectormap -->
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>bower_components/jvectormap/jquery-jvectormap.css">
+        <!-- Date Picker -->
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+        <!-- Daterange picker -->
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>bower_components/bootstrap-daterangepicker/daterangepicker.css">
+        <!-- bootstrap wysihtml5 - text editor -->
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+        <link rel="stylesheet" href="<?php echo BASE_URL;?>fancybox/dist/jquery.fancybox.min.css">
+        <!-- DATA TABLE-->              
+        <!--        <link rel="stylesheet"  href="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css"/>-->
+
+        <!-- Google Font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <style>
+            select{
+                text-align-last: center !important;
+                text-align: center !important;
+            }
+            thead{
+                background-color: #1C4773 !important;
+                color: white;                
+            }
+            th{
+                text-align: center;  
+                border-radius: 4px;
+            }  
+            tbody>tr:hover{background-color: #FFF5CA !important}
+            td{
+                text-align: center !important; 
+                vertical-align: middle !important;
+            }
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+        </style>
+    </head>
+    <body class="hold-transition skin-blue layout-top-nav" style="background-color: #323C48;padding-bottom: 51px;">
+        <div class="text-center">
+            <img src="<?php echo BASE_URL;?>dist/img/angel.jpg" width="40%" />
+        </div>
+        <header class="main-header">
+            <center>
+            <nav class="navbar navbar-static-top">
+                
+                    <div class="container-fluid">          
+                        <div class="navbar-header">            
+                            <a href="" class="navbar-brand">SISTEMA CONTROL <b>DE ARMAMENTO</b></a>                      
+                        </div>          
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="navbar-collapse"> 
+                            <div class="row text-center">
+                                <center>
+                                <ul class="nav navbar-nav navbar-center">    
+                                    <li class="dropdown">
+                                        <a href="<?php echo BASE_URL;?>" ><span style=" color: white; background-color: #1ABC9C;" >&nbsp; <span class="fa fa-home"></span> &nbsp;</span>&nbsp; Inicio <span class="fa fa-caret-right"></span></a>              
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="<?php echo BASE_URL;?>padron/padron.php"><span class="label-warning">&nbsp;<span class="fa fa-rocket"></span> &nbsp;</span>&nbsp; PADRON DE ARMAS <span class="fa fa-caret-right"></span></a>
+                                        <!--              <ul class="dropdown-menu" role="menu">
+                                                        <li><a href="#">Action</a></li>
+                                                        <li><a href="#">Another action</a></li>
+                                                        <li><a href="#">Something else here</a></li>                
+                                                      </ul>-->
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="<?php echo BASE_URL;?>resguardos/asignar_resguardos.php" ><span class="label-success">&nbsp; <span class="fa fa-plus-square"></span> &nbsp;</span>&nbsp; ASIGNAR RESGUARDOS <span class="fa fa-caret-right"></span></a>                          
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="<?php echo BASE_URL;?>resguardos/emitir_resguardos.php" ><span class="label-info">&nbsp; <span class="fa fa-upload"></span> &nbsp;</span>&nbsp; EMITIR RESGUARDOS <span class="fa fa-caret-right"></span></a>              
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="label-danger">&nbsp; <span class="fa fa-paste"></span> &nbsp;</span>&nbsp; REPORTES <span class="fa fa-caret-down"></span></a>
+                                        <ul class="dropdown-menu" role="menu">                
+                                            <li><center>RESGUARDOS</center></li>
+                                    <li class="divider"></li>
+                                    <li><a href="<?php echo BASE_URL;?>reportes/general.php"><span class="fa fa-files-o"></span> General</a></li>
+                                    <li><a href="<?php echo BASE_URL;?>reportes/individual.php"><span class="fa fa-file-text-o"></span> Individual</a></li>                
+                                </ul>
+                                </li>            
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span style=" color: #114D87; background-color: #F2F3F4;" >&nbsp; <span class="fa fa-gears"></span> &nbsp;</span>&nbsp; OPCIONES <span class="fa fa-caret-down"></span></a>
+                                    <ul class="dropdown-menu" role="menu">                
+                                        <li><center>USUARIO</center></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><span class="fa fa-power-off"></span> &nbsp;Cerrar sesión</a></li>                                
+                                </ul>
+                                </li>            
+                                </ul>       
+                            </center>
+                            </div>
+                        </div>        
+                    </div>
+                
+                <!-- /.container-fluid -->
+            </nav>
+                </center>
+        </header>
