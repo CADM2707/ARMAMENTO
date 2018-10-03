@@ -35,7 +35,7 @@ include_once '../head.html';
     <div class="container">
         <!-- Content Header (Page header) -->
         <section class="content-header" style=" background-color: white; border-bottom: 1px solid #B9B9B9;  box-shadow: 1px 1px 5px #999;">
-            <h1><span><label class="gray"> <span class="fa fa-rocket"></span></label></span> Padrón de armamento</h1>            
+            <h1><span><label class="gray"> <span class="fa fa-file-text-o"></span></label></span> Reporte - Resguardos individual</h1>            
         </section>        
         <!-- Main content -->
         <section class="content" style=" background-color: white;" >            
