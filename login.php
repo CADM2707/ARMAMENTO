@@ -3,11 +3,11 @@ session_start();
 isset($_SESSION['USUARIO']) ? header("Location: index.php") : NULL;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SISFAC</title>
+        <title>ARCO</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <link rel="icon" href="dist/img/pa2.png" type="image/ico" />

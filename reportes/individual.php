@@ -32,7 +32,7 @@ include_once '../head.html';
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>/bower_components/select2/dist/css/select2.min.css">   
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">               
 <div class="content-wrapper">
-    <div class="container">
+    <div class="container-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header" style=" background-color: white; border-bottom: 1px solid #B9B9B9;  box-shadow: 1px 1px 5px #999;">
             <h1><span><label class="gray"> <span class="fa fa-file-text-o"></span></label></span> Reporte - Resguardos individual</h1>            
