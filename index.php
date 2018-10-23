@@ -1,6 +1,6 @@
 <?php
-include_once 'config.php';
 include_once 'head.html';
+include_once 'config.php';
 ?>     
 <style>
     .text1{
