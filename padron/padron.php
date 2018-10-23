@@ -56,29 +56,29 @@ include_once '../head.html';
                                     <div class="col-lg-1 col-xs-0 text-center"></div>  
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>MATRICULA</label>
-                                        <input class="form form-control" type="text" name="matricula" id="matricula">
+                                        <input required="true" class="form form-control" type="text" name="matricula" id="matricula">
                                     </div>                                                                                                                                                                        
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>CLASIFICACIÓN</label>
-                                        <select class="form form-control select2" name="clasificacion" id="clasificacion" style="width: 100%;">
+                                        <select required="true" class="form form-control select2" name="clasificacion" id="clasificacion" style="width: 100%;">
                                             <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                         </select>
                                     </div>                                                                                                                                                                        
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>TIPO</label>
-                                        <select class="form form-control select2" name="tipo" id="tipo" style="width: 100%;">
+                                        <select required="true" class="form form-control select2" name="tipo" id="tipo" style="width: 100%;">
                                             <option selected="selected" value="" disabled="">Opciones</option>                                                   
                                         </select>
                                     </div>                                                                                                                                                                        
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>MARCA</label>
-                                        <select class="form form-control select2" name="marca" id="marca" style="width: 100%;">
+                                        <select required="true" class="form form-control select2" name="marca" id="marca" style="width: 100%;">
                                             <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                         </select>
                                     </div>                                                                                                                                                                        
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>MODELO</label>
-                                        <select class="form form-control select2" name="modelo" id="modelo" style="width: 100%;">
+                                        <select required="true" class="form form-control select2" name="modelo" id="modelo" style="width: 100%;">
                                             <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                         </select>
                                     </div>                                                                                                                                                                                                                                                                                                                                                                                    
@@ -87,23 +87,23 @@ include_once '../head.html';
                                     <div class="col-lg-1 col-xs-0 text-center"></div>  
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>RFAFE</label>
-                                        <input class="form form-control" type="text" name="rfafe" id="rfafe">
+                                        <input required="true" class="form form-control" type="text" name="rfafe" id="rfafe">
                                     </div> 
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>CALIBRE</label>
-                                        <select class="form form-control select2" name="calibre" id="calibre" style="width: 100%;">
+                                        <select required="true" class="form form-control select2" name="calibre" id="calibre" style="width: 100%;">
                                             <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                         </select>
                                     </div>
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>PROPIETARIO</label>
-                                        <select class="form form-control select2" name="propietario" id="propietario" style="width: 100%;">
+                                        <select required="true" class="form form-control select2" name="propietario" id="propietario" style="width: 100%;">
                                             <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                         </select>
                                     </div>                                                                                                                                                                        
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>SITUACIÓN</label>
-                                        <select class="form form-control select2" name="situacion" id="situacion" style="width: 100%;">
+                                        <select required="true" class="form form-control select2" name="situacion" id="situacion" style="width: 100%;">
                                             <option selected="selected" value="" disabled="">Opciones</option>                                                   
                                         </select>
                                     </div>                                        
@@ -146,6 +146,7 @@ include_once '../head.html';
 
                             <form method="POST" id="searchPadron" name="searchPadron">                                                                                
                                 <div class="row text-center">                                            
+                                    <div class="col-lg-1 col-xs-0  text-center"></div>  
                                     <div class="col-lg-2 col-xs-12  text-center">  
                                         <label>MATRICULA</label>
                                         <input  class="form form-control" type="text" name="matricula1" id="matricula1">
@@ -173,19 +174,20 @@ include_once '../head.html';
                                         <select  class="form form-control select2" name="modelo1" id="modelo1" style="width: 100%;">
                                             <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                         </select>
-                                    </div>                                                                                                                                                                        
+                                    </div>                                                                                                                                                                                                                                                                                                                                                                                    
+                                </div>
+                                <div class="row text-center">       
+                                    <div class="col-lg-1 col-xs-0  text-center"></div>  
+                                    <div class="col-lg-2 col-xs-12 text-center">  
+                                        <label>RFAFE</label>
+                                        <input  class="form form-control" type="text" name="rfafe1" id="rfafe1">
+                                    </div> 
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>CALIBRE</label>
                                         <select  class="form form-control select2" name="calibre1" id="calibre1" style="width: 100%;">
                                             <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                         </select>
-                                    </div>                                                                                                                                                                        
-                                </div>
-                                <div class="row text-center">                                                                                        
-                                    <div class="col-lg-2 col-xs-12 text-center">  
-                                        <label>RFAFE</label>
-                                        <input  class="form form-control" type="text" name="rfafe1" id="rfafe1">
-                                    </div>                                                                                                                                                                        
+                                    </div>
                                     <div class="col-lg-2 col-xs-12 text-center">  
                                         <label>PROPIETARIO</label>
                                         <select  class="form form-control select2" name="propietario1" id="propietario1" style="width: 100%;">
@@ -197,17 +199,7 @@ include_once '../head.html';
                                         <select  class="form form-control select2" name="situacion1" id="situacion1" style="width: 100%;">
                                             <option selected="selected" value="" disabled="">Opciones</option>                                                   
                                         </select>
-                                    </div>   
-                                    <div class="col-lg-4 col-xs-4 text-center">  
-                                        <label>ÁREA RESGUARDANTE</label>
-                                        <select  class="form form-control select2" name="areaRes1" id="areaRes1" style="width: 100%;">
-                                            <option selected="selected" value="" disabled="">Opciones</option>                                                   
-                                        </select>
-                                    </div>   
-                                    <div class="col-lg-2 col-xs-12 text-center">  
-                                        <label>ID ELEMENTO RESGUARDANTE</label>
-                                        <input  type="text" class="form form-control" id="elemResg">
-                                    </div>   
+                                    </div>                                      
                                 </div>
                                 <div class="row text-center">
                                     <br>
@@ -233,80 +225,113 @@ include_once '../head.html';
                                         </div>   
                                         <div class="modal-body">                            
                                             <div class="col-md-12">
-                                                <form id='updateArma' name='validaPagos' method="POST"><div class="row text-center">                                            
+                                                <form id='updateArmas' name='updateArmas' method="POST"><div class="row text-center">   
+                                                        <div class="col-lg-1 col-xs-0  text-center"></div>  
                                                         <div class="col-lg-2 col-xs-12 text-center">  
                                                             <label>MATRICULA</label>
-                                                            <input class="form form-control" type="text" name="matricula2" id="matricula2">
+                                                            <input readonly="true" class="form form-control" type="text" name="matricula2" id="matricula2">
                                                         </div>                                                                                                                                                                        
                                                         <div class="col-lg-2 col-xs-12 text-center">  
                                                             <label>CLASIFICACIÓN</label>
-                                                            <select class="form form-control select2" name="clasificacion2" id="clasificacion2" style="width: 100%;">
+                                                            <select class="form form-control" name="clasificacion2" id="clasificacion2" style="width: 100%;">
                                                                 <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                                             </select>
                                                         </div>                                                                                                                                                                        
                                                         <div class="col-lg-2 col-xs-12 text-center">  
                                                             <label>TIPO</label>
-                                                            <select class="form form-control select2" name="tipo2" id="tipo2" style="width: 100%;">
+                                                            <select class="form form-control" name="tipo2" id="tipo2" style="width: 100%;">
                                                                 <option selected="selected" value="" disabled="">Opciones</option>                                                   
                                                             </select>
                                                         </div>                                                                                                                                                                        
                                                         <div class="col-lg-2 col-xs-12 text-center">  
                                                             <label>MARCA</label>
-                                                            <select class="form form-control select2" name="marca2" id="marca2" style="width: 100%;">
+                                                            <select class="form form-control" name="marca2" id="marca2" style="width: 100%;">
                                                                 <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                                             </select>
                                                         </div>                                                                                                                                                                        
                                                         <div class="col-lg-2 col-xs-12 text-center">  
                                                             <label>MODELO</label>
-                                                            <select class="form form-control select2" name="modelo2" id="modelo2" style="width: 100%;">
+                                                            <select class="form form-control" name="modelo2" id="modelo2" style="width: 100%;">
                                                                 <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                                             </select>
-                                                        </div>                                                                                                                                                                        
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>CALIBRE</label>
-                                                            <select class="form form-control select2" name="calibre2" id="calibre2" style="width: 100%;">
-                                                                <option selected="selected" value="" disabled="">Opciones</option>                                                    
-                                                            </select>
-                                                        </div>                                                                                                                                                                        
+                                                        </div>                                                                                                                                                                                                                                                                                                                                                                                                        
                                                     </div>
-                                                    <div class="row text-center">                                                                                        
+                                                    <div class="row text-center">
+                                                        <div class="col-lg-1 col-xs-0  text-center"></div>  
                                                         <div class="col-lg-2 col-xs-12 text-center">  
                                                             <label>RFAFE</label>
                                                             <input class="form form-control" type="text" name="rfafe2" id="rfafe2">
-                                                        </div>                                                                                                                                                                        
+                                                        </div>
+                                                        <div class="col-lg-2 col-xs-12 text-center">  
+                                                            <label>CALIBRE</label>
+                                                            <select class="form form-control" name="calibre2" id="calibre2" style="width: 100%;">
+                                                                <option selected="selected" value="" disabled="">Opciones</option>                                                    
+                                                            </select>
+                                                        </div>
                                                         <div class="col-lg-2 col-xs-12 text-center">  
                                                             <label>PROPIETARIO</label>
-                                                            <select class="form form-control select2" name="propietario2" id="propietario2" style="width: 100%;">
+                                                            <select class="form form-control " name="propietario2" id="propietario2" style="width: 100%;">
                                                                 <option selected="selected" value="" disabled="">Opciones</option>                                                    
                                                             </select>
                                                         </div>                                                                                                                                                                        
                                                         <div class="col-lg-2 col-xs-12 text-center">  
                                                             <label>SITUACIÓN</label>
-                                                            <select class="form form-control select2" name="situacion2" id="situacion2" style="width: 100%;">
+                                                            <select class="form form-control " name="situacion2" id="situacion2" style="width: 100%;">
                                                                 <option selected="selected" value="" disabled="">Opciones</option>                                                   
                                                             </select>
-                                                        </div>   
-                                                        <div class="col-lg-4 col-xs-12 text-center">  
-                                                            <label>ÁREA RESGUARDANTE</label>
-                                                            <select class="form form-control select2" name="areaRes2" id="areaRes2" style="width: 100%;">
-                                                                <option selected="selected" value="" disabled="">Opciones</option>                                                   
-                                                            </select>
-                                                        </div>   
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>ID ELEMENTO RESGUARDANTE</label>
-                                                            <input class="form form-control" type="text" name="idResg2" id="idResg2">
-                                                        </div>   
+                                                        </div>                                                           
                                                     </div>
                                                     <hr>
                                                     <div class="row text-center">
+                                                        <a class='btn btn-success' value='' onclick='updateConfirma()' ><i class='fa fa-refresh'></i> ACTUALIZAR</a>                                                        
                                                         <button type="button" class="btn btn-warning" data-dismiss="modal" ><i class="fa fa-close" ></i> CERRAR</button>
-                                                        <button class="btn btn-success" name="guardar" value="1" type="submit"><i class="fa fa-save" ></i> GUARDAR</button>                                                        
                                                     </div>
                                                 </form>
                                             </div>                            
                                         </div>
                                         <div class="modal-footer">
                                             <!--                <button type="button" class="close" data-dismiss="modal" style=" background-color: black;">&nbsp&nbsp;&times;&nbsp&nbsp;</button>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='modal fade' id='pregunta' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                                <div class='modal-dialog' role='document'>
+                                    <div class='modal-content'>
+                                        <div class='modal-header' style=' background-color: #2C3E50;'>
+                                            <h5 class='modal-title' id='exampleModalLabel' style='display:inline'></h5>
+                                            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                                <span aria-hidden='true'>&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class='modal-body'>
+                                            <center> <h4><label> <span id="responsePago"></span></label></h4></center>
+                                        </div>
+                                        <div class='modal-footer'>
+                                            <center>
+                                                <button onclick="updatearma()" type='button'  class='btn btn-primary' data-dismiss='modal'>ACEPTAR</button>                                
+                                                <button type='button' class='btn btn-warning' data-dismiss='modal'>CANCELAR</button>                                
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='modal fade' id='respuesta' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                                <div class='modal-dialog' role='document'>
+                                    <div class='modal-content'>
+                                        <div class='modal-header' style=' background-color: #2C3E50;'>
+                                            <h5 class='modal-title' id='exampleModalLabel' style='display:inline'></h5>
+                                            <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                                <span aria-hidden='true'>&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class='modal-body'>
+                                            <center> <h4><label> <span id="responsePago2"></span></label></h4></center>
+                                        </div>
+                                        <div class='modal-footer'>
+                                            <center>
+                                                <button type='button'  class='btn btn-primary' data-dismiss='modal'>ACEPTAR</button>                                                                                                              
+                                            </center>
                                         </div>
                                     </div>
                                 </div>
@@ -355,6 +380,15 @@ include_once '../head.html';
                 $("#situacion").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[5]);
                 $("#areaRes").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[6]);
                 $("#propietario").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[7]);
+                
+                $("#clasificacion2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[0]);
+                $("#tipo2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[1]);
+                $("#marca2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[2]);
+                $("#modelo2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[3]);
+                $("#calibre2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[4]);
+                $("#situacion2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[5]);
+                $("#areaRes2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[6]);
+                $("#propietario2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[7]);
             }
         });
 
@@ -432,8 +466,37 @@ include_once '../head.html';
 
     });
 
-    function editPadron() {
-        $("#updateArma").modal("show");
+    function editPadron(id,mat) {
+        var url = "<?php echo BASE_URL; ?>includes/armamento/buscarArma.php";
+        $.ajax({
+            type: "POST",
+            url: url,
+            dataType: "json",
+            data: {
+                matricula:mat
+            },
+            success: function (data)
+            {                
+                $("#matricula2").val(data[1]);
+                $("#tipo2 option:selected").removeAttr("selected");
+                $("#tipo2 option[value="+ data[2] +"]").attr("selected",true);
+                $("#calibre2 option:selected").removeAttr("selected");
+                $("#calibre2 option[value="+ data[3] +"]").attr("selected",true);          
+                $("#rfafe2").val(data[4]);
+                $("#marca2 option:selected").removeAttr("selected");
+                $("#marca2 option[value="+ data[5] +"]").attr("selected",true);
+                $("#clasificacion2 option:selected").removeAttr("selected");
+                $("#clasificacion2 option[value="+ data[6] +"]").attr("selected",true);
+                $("#modelo2 option:selected").removeAttr("selected");
+                $("#modelo2 option[value="+ data[7] +"]").attr("selected",true);
+                $("#propietario2 option:selected").removeAttr("selected");
+                $("#propietario2 option[value="+ data[8] +"]").attr("selected",true);
+                $("#situacion2 option:selected").removeAttr("selected");
+                $("#situacion2 option[value="+ data[9] +"]").attr("selected",true);
+                $("#updateArma").modal("show");
+            }
+        });
+        return false;                
     }
 
     $("#addArmamento").submit(function (){
@@ -448,7 +511,9 @@ include_once '../head.html';
             success: function (data)
             {                                  
                     if(data==1){
-                         $("#addArmamento")[0].reset();                        
+                         $("#addArmamento").trigger("reset");   
+                         loadsec();
+                         $("#ModalLoad").modal('hide');
                         $alerta.removeClass();
                         $alerta
                                 .addClass('alert')
@@ -490,6 +555,40 @@ include_once '../head.html';
 
         return false;
     });
+    
+    function updateConfirma(){        
+        $("#responsePago").text("¿Está seguro de guardar los cambios realizados?");
+        $("#pregunta").modal("show");        
+    }
+
+    function updatearma(){
+        
+        
+        load();
+        var url = "<?php echo BASE_URL; ?>includes/armamento/update_armas.php";
+        $.ajax({
+            type: "POST",
+            url: url,
+            dataType: "html",
+            data: $("#updateArmas").serialize(),
+            success: function (data)
+            {                            
+                $("#updateArma").modal('hide');                
+                $("#ModalLoad").modal('hide');   
+                
+                if(data==1){
+                    $("#responsePago2").text("Registro actualizado correctamente!");                
+                } else{
+                    $("#responsePago2").text("El registro no se ha actualizado!");                
+                }
+                $("#respuesta").modal("show");
+            }
+        });
+
+        return false;
+
+
+    }
 </script>
 
 
