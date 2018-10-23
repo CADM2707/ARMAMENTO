@@ -14,20 +14,20 @@ $sec= isset($_REQUEST['usrSec'])? $_REQUEST['dos']: 0;
 //}
 if ($load==1) {
     // QUERYS
-    $querys[0] = "select * from Arma_C_Clasificacion";
-    $querys[1] = "select * from Arma_C_Tipo";
-    $querys[2] = "select * from Arma_C_Marca where CVE_MARCA<>0";
-    $querys[3] = "select * from Arma_C_Modelo where CVE_MODELO<>0";
-    $querys[4] = "select * from Arma_C_Calibre where CVE_CALIBRE<>0";
-    $querys[5] = "select * from Arma_C_Situacion";    
+    $querys[0] = "select * from Arma_C_Clasificacion order by CLASIFICACION ASC";
+    $querys[1] = "select * from Arma_C_Tipo order by DESCRIPCION ASC";
+    $querys[2] = "select * from Arma_C_Marca where CVE_MARCA<>0 order by DESCRIPCION ASC";
+    $querys[3] = "select * from Arma_C_Modelo where CVE_MODELO<>0 order by DESCRIPCION ASC";
+    $querys[4] = "select * from Arma_C_Calibre where CVE_CALIBRE<>0 order by DESCRIPCION asc";
+    $querys[5] = "select * from Arma_C_Situacion order by STATUS asc";    
     $querys[6] = "SELECT T1.ID_USUARIO,R_SOCIAL FROM USUARIO_PADRON T1
                   INNER JOIN Usuario_Vigencia_R_Social T2 ON T1.ID_USUARIO=T2.ID_USUARIO
                   WHERE Sector=50 AND T1.ID_USUARIO LIKE '4.%'
                   UNION
                   SELECT CAST(Sector AS varchar(2))+CAST(DESTACAMENTO AS VARCHAR(2)),'SECTOR '+CAST(Sector AS varchar(2))+' DESTACAMENTO '+CAST(DESTACAMENTO AS VARCHAR(2))
-                  FROM Usuario_Padron WHERE ID_USUARIO IN ('0','80019')";
-    $querys[7] = "select * from [dbo].[Arma_C_Propietario]";
-    $querys[8] = "select SECTOR from [dbo].[C_Sector]";
+                  FROM Usuario_Padron WHERE ID_USUARIO IN ('0','80019')  ORDER BY R_SOCIAL";
+    $querys[7] = "select * from [dbo].[Arma_C_Propietario] order by PROPIEDAD ASC";
+    $querys[8] = "select SECTOR from [dbo].[C_Sector] order by SECTOR ASC";
     for ($i = 0; $i <= 8; $i++) {
 
         $execute = sqlsrv_query($conn, $querys[$i]);        

@@ -818,7 +818,8 @@ $("#ModalLoad").modal('hide');
     });
     
     function clearAllForm(){
-         window.location.href = "../reportes/hoja_control_individual.php?id_usuario='"+$("#id_elemE").val()+"'&noArmas="+noArmas;
+         window.open ("../reportes/hoja_control_individual.php?id_usuario='"+$("#id_elemE").val()+"'&noArmas="+noArmas ,'_blank'); 
+         window.location.href = "asignar_resguardos.php";
     }
 </script>
 

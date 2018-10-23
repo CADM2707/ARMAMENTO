@@ -27,6 +27,7 @@ for ($index = 1; $index <= $noFilas; $index++) {
     $cargadores = isset($_REQUEST['Crgad' . $index]) ? $_REQUEST['Crgad' . $index] : "";
     $cartuchos = isset($_REQUEST['Muni' . $index]) ? $_REQUEST['Muni' . $index] : "";
     $matricula = isset($_REQUEST['Mat' . $index]) ? $_REQUEST['Mat' . $index] : "";
+    
     $queryAddResgIR .= "insert into [dbo].[Arma_Resg_Individual]
                         values((select COUNT(*)+1 from [dbo].[Arma_Resg_Individual]),1,GETDATE(),(select CONCAT ((select COUNT(*)+1 ID_RESGUARDO from [dbo].[Arma_Resg_Individual]),'50')AS FOLIO),
                         $id_elemento,$sector,$destto,'$id_usuario',

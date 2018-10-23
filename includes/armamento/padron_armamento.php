@@ -87,12 +87,14 @@ for ($index = 0; $index < count($requestArray); $index++) {
 if (!isset($addCode)) {
     $addCode .= " where ";
 } else {
-    $addCode .= " and ";
+//    $addCode .= " and ";
 }
+//agregar nuevamente para ver las armas que pertenecen a cada destacamento
 if ($perfil == 1) {
-    $addCode .= "SECTOR=50 and ID_USUARIO is null";
+//    $addCode .= "SECTOR=50 and ID_USUARIO is null";
+    $addCode .= "";
 } else if ($perfil == 2) {
-    $addCode .= "SECTOR=51";
+//    $addCode .= " and SECTOR=51";
 }
 
 $queryPadronArmas = $queryPadronArmas . $addCode . " order by TIPO asc";
@@ -116,7 +118,7 @@ if ($addResg == "") {
                                 <th>MUNICIONES</th>     
                                 <th>SECTOR RESGUARDANTE</th>
                                 <th>ID USUARIO RESGUARDANTE</th>
-                                <th>OPCIONES</th>";
+                                <th class='hidex'>OPCIONES</th>";
 } else {
     $html .= "           <center><H4><label> <span class='fa fa-list' style=' color: #114D87'></span> LISTADO PADRÓN DE ARMAMENTO</label></H4></center>";
     if ($addResIR == "") {
@@ -187,7 +189,7 @@ while ($row = sqlsrv_fetch_array($execute)) {
                   <td>$municiones</td>  
                   <td>$sec</td>
                   <td>$usuario</td>
-                  <td><button class='btn btn-warning' value='$cont' onclick='editPadron($cont,$mat2)' ><i class='fa fa-edit'></i> Editar</button></td>                 
+                  <td class='hidex'><button class='btn btn-warning' value='$cont' onclick='editPadron($cont,$mat2)' ><i class='fa fa-edit'></i> Editar</button></td>                 
               </tr>
             ";
     } else {
