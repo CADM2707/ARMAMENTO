@@ -363,6 +363,7 @@ include_once '../head.html';
         loadTb();
         loadTbIR();
     });
+    
     var noArmas=0;
     function loadTb() {
         $("#listado3").html("<center><H4><label> <span class='fa fa-plus' style=' color: #114D87'></span> LISTADO ASIGNAR RESGUARDOS</label></H4></center>\n\
@@ -694,7 +695,7 @@ $("#ModalLoad").modal('hide');
                                                 <div class='col-lg-2 col-xs-12 text-center'>  \n\
                                                     <label>ID AUTORIZA</label>\n\
                                                     <input required='true' value='' placeholder='id del elementi que autoriza' class='form form-control' type='number' name='idautoriza' id='idautoriza'>\n\
-                                                    <input class='form form-control' type='hidden' name='nofilas' id='nofilas'>\n\
+                                                    <input class='form form-control' type='hidden' value='0' name='nofilas' id='nofilas'>\n\
                                                 </div>\n\
                                             </div>\n\
                                         </div>\n\
@@ -719,18 +720,28 @@ $("#ModalLoad").modal('hide');
         <a id='continueIR' class='btn btn-primary' style='display:none' onclick='saveResGenIR()'><span class='fa  fa-play'></span>&nbsp;&nbsp;Continuar</a><br><br>");
     }
 
-    function bgColorTrIR() {
+    function bgColorTrIR() {          
         $('#tbPadronArmas .checkAdd:checked').each(
-                function () {
+                       
+              function () {
+                    
                     var tr = $(this).parents("tr").appendTo("#padronSearch2IR tbody");
+                    var idTr = parseInt($(this).attr("id").substring(2));                                         
+                    var val=$("#nofilas").val();                                            
+                    if(val<idTr){
+                                               
+                        $("#nofilas").val(idTr);                        
+                    }
                 }
-        );
+            );
+    
         $("#select1IR").show();
-        $("#unselect1IR").hide();
+        $("#unselect1IR").hide();        
         var nFilas = $("#padronSearch2IR tr").length - 1;
+        
         if (nFilas > 0) {
             $("#continueIR").show();
-            $("#nofilas").val(nFilas);
+//            $("#nofilas").val(nFilas);
             $("#cont2").val(nFilas);
         }
     }
@@ -800,7 +811,7 @@ $("#ModalLoad").modal('hide');
             data: $("#saveResIR").serialize(),
             success: function (data)
             {
-                if ($.isNumeric(data) && data!=0) {
+                if ($.isNumeric(data) && data!=0 ) {
                     $("#responsePago2").html("<div class='alert alert-success' role='alert'><h4 style='display:inline'>Resguardo asignado correctamente!</h4></div>");
                     $("#controlAsign").hide(1000);
                     $("#listado3").hide(1000);

@@ -26,7 +26,7 @@ $requestArray[10] = "elemResg";
 $html = "";
 $cont2= isset($_REQUEST['cont2'])? $_REQUEST['cont2'] : "" ;
 
-echo $addResg = isset($_REQUEST['resguardoG']) ? $_REQUEST['resguardoG'] : "";
+$addResg = isset($_REQUEST['resguardoG']) ? $_REQUEST['resguardoG'] : "";
 $addResIR = isset($_REQUEST['resguardoIR']) ? $_REQUEST['resguardoIR'] : "";
 
 for ($index = 0; $index < count($requestArray); $index++) {

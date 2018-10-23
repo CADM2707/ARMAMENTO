@@ -4,7 +4,6 @@ include_once '../../conexiones/sqlsrv.php';
 $conn = connection_object();
 $html = 0;
 $queryAddResgIR = "";
-
 $id_elemento = isset($_REQUEST['id_elemE']) ? $_REQUEST['id_elemE'] : "";
 $sector = isset($_REQUEST['sectorRI']) ? $_REQUEST['sectorRI'] : "";
 $destto = isset($_REQUEST['desttoRI']) ? $_REQUEST['desttoRI'] : "";
@@ -21,27 +20,25 @@ $id_vobo = isset($_REQUEST['VOBO']) ? $_REQUEST['VOBO'] : "";
 $id_autoriza = isset($_REQUEST['idautoriza']) ? $_REQUEST['idautoriza'] : "";
 
 $noFilas = isset($_REQUEST['nofilas']) ? $_REQUEST['nofilas'] : "";
-
+$indiceArray = 0;
 for ($index = 1; $index <= $noFilas; $index++) {
     $id_armamento = isset($_REQUEST['idArmamento' . $index]) ? $_REQUEST['idArmamento' . $index] : "";
     $cargadores = isset($_REQUEST['Crgad' . $index]) ? $_REQUEST['Crgad' . $index] : "";
     $cartuchos = isset($_REQUEST['Muni' . $index]) ? $_REQUEST['Muni' . $index] : "";
     $matricula = isset($_REQUEST['Mat' . $index]) ? $_REQUEST['Mat' . $index] : "";
-    
-    $queryAddResgIR .= "insert into [dbo].[Arma_Resg_Individual]
+
+    if ($matricula != "") {
+        $queryAddResgIR = "insert into [dbo].[Arma_Resg_Individual]
                         values((select COUNT(*)+1 from [dbo].[Arma_Resg_Individual]),1,GETDATE(),(select CONCAT ((select COUNT(*)+1 ID_RESGUARDO from [dbo].[Arma_Resg_Individual]),'50')AS FOLIO),
                         $id_elemento,$sector,$destto,'$id_usuario',
-                        '$matricula',$cargadores,$cartuchos,'$domicilio','$colonia',$cp,'$localidad','$entidad','$chaleco','$antimotin','$candado',$id_armamento,$id_vobo,$id_autoriza)
-                            
+                        '$matricula',$cargadores,$cartuchos,'$domicilio','$colonia',$cp,'$localidad','$entidad','$chaleco','$antimotin','$candado',$id_armamento,$id_vobo,$id_autoriza)                        
                         ";
-    $html = $index;
-}
-$execute = sqlsrv_query($conn, $queryAddResgIR);
-
-if ($execute) {
-    $html = $index-1;
-} else {
-    $html = 0;
+        $execute = sqlsrv_query($conn, $queryAddResgIR);
+        $folio = sqlsrv_query($conn,"(select COUNT(*) as resultado from [dbo].[Arma_Resg_Individual])");
+        $row = sqlsrv_fetch_array($folio);
+        $html=$row['resultado'];
+    }
 }
 
 echo $html;
+
