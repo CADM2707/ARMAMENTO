@@ -232,6 +232,7 @@ include_once '../head.html';
                                         <form id="formBusquedaIR">
                                             <input type="hidden" value="addResg" name="resguardoG" id="resguardoIR"> 
                                             <input type="hidden" value="addResgIR" name="resguardoIR" id="resguardoIR1">                                       
+                                            <input type="hidden" name="cont2" id="cont2">                                       
                                             <div  class="row text-center">
                                                 <div class="col-lg-2 col-xs-12 text-center">  
                                                     <label>MATRICULA</label>
@@ -362,7 +363,7 @@ include_once '../head.html';
         loadTb();
         loadTbIR();
     });
-
+    var noArmas=0;
     function loadTb() {
         $("#listado3").html("<center><H4><label> <span class='fa fa-plus' style=' color: #114D87'></span> LISTADO ASIGNAR RESGUARDOS</label></H4></center>\n\
         \n\<a id='select2' class='btn btn-primary' onclick='selectAll(2)'><span class='fa fa-sort-amount-asc'></span>&nbsp;Marcar todos</a>\n\
@@ -799,13 +800,14 @@ $("#ModalLoad").modal('hide');
             data: $("#saveResIR").serialize(),
             success: function (data)
             {
-                if (data == 1) {
+                if ($.isNumeric(data) && data!=0) {
                     $("#responsePago2").html("<div class='alert alert-success' role='alert'><h4 style='display:inline'>Resguardo asignado correctamente!</h4></div>");
                     $("#controlAsign").hide(1000);
                     $("#listado3").hide(1000);
                     $("#resp2").toggle();
-                    $("#resp1").toggle();
-                } else {
+                    $("#resp1").toggle();  
+                    noArmas=data;
+                } else if(data==0) {
                     $("#responsePago2").html("<div class='alert alert-danger' role='alert'><h4 style='display:inline'>El resguardo no se ha asignado!</h4></div>");
                 }
                  $("#respuesta").modal('show');
@@ -816,8 +818,7 @@ $("#ModalLoad").modal('hide');
     });
     
     function clearAllForm(){
-         
-        $("#id_elemE").val();
+         window.location.href = "../reportes/hoja_control_individual.php?id_usuario='"+$("#id_elemE").val()+"'&noArmas="+noArmas;
     }
 </script>
 

@@ -2,7 +2,7 @@
 
 include_once '../../conexiones/sqlsrv.php';
 $conn = connection_object();
-$html = "";
+$html = 0;
 $queryAddResgIR = "";
 
 $id_elemento = isset($_REQUEST['id_elemE']) ? $_REQUEST['id_elemE'] : "";
@@ -20,9 +20,6 @@ $candado = isset($_REQUEST['candado']) ? $_REQUEST['candado'] : "";
 $id_vobo = isset($_REQUEST['VOBO']) ? $_REQUEST['VOBO'] : "";
 $id_autoriza = isset($_REQUEST['idautoriza']) ? $_REQUEST['idautoriza'] : "";
 
-
-
-
 $noFilas = isset($_REQUEST['nofilas']) ? $_REQUEST['nofilas'] : "";
 
 for ($index = 1; $index <= $noFilas; $index++) {
@@ -34,15 +31,16 @@ for ($index = 1; $index <= $noFilas; $index++) {
                         values((select COUNT(*)+1 from [dbo].[Arma_Resg_Individual]),1,GETDATE(),(select CONCAT ((select COUNT(*)+1 ID_RESGUARDO from [dbo].[Arma_Resg_Individual]),'50')AS FOLIO),
                         $id_elemento,$sector,$destto,'$id_usuario',
                         '$matricula',$cargadores,$cartuchos,'$domicilio','$colonia',$cp,'$localidad','$entidad','$chaleco','$antimotin','$candado',$id_armamento,$id_vobo,$id_autoriza)
+                            
                         ";
+    $html = $index;
 }
-//echo $queryAddResgIR;
 $execute = sqlsrv_query($conn, $queryAddResgIR);
 
 if ($execute) {
-    $html = 1;
+    $html = $index-1;
 } else {
-    $html = 2;
+    $html = 0;
 }
 
 echo $html;

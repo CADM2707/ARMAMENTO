@@ -1,6 +1,12 @@
 <?php 
 	session_start();
 	//require('../conexion.php');
+        
+        $id_usr = isset($_REQUEST['id_usuario'])?$_REQUEST['id_usuario']:"";
+        $noArmas = isset($_REQUEST['noArmas'])?$_REQUEST['noArmas']:"";
+        
+        $query="select top $noArmas * from [dbo].[Arma_Resg_Individual] where ID_ELEMENTO=$id_usr order by ID_RESGUARDO desc";
+        
 	@$dia=date('d');
 	@$mes=date('m');
 		if(@$mes==1){ $m="ENERO"; }
