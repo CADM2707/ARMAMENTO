@@ -7,11 +7,6 @@ $html = "";
 $querys = array();
 $opciones = array();
 $dos= isset($_REQUEST['dos'])? $_REQUEST['dos']: 0;
-$sec= isset($_REQUEST['usrSec'])? $_REQUEST['dos']: 0;
-//$codeUsr="";
-//if($sec!=0){
-// $codeUsr="and T2.R_SOCIAL like '50' and ";  
-//}
 if ($load==1) {
     // QUERYS
     $querys[0] = "select * from Arma_C_Clasificacion";
@@ -27,8 +22,8 @@ if ($load==1) {
                   SELECT CAST(Sector AS varchar(2))+CAST(DESTACAMENTO AS VARCHAR(2)),'SECTOR '+CAST(Sector AS varchar(2))+' DESTACAMENTO '+CAST(DESTACAMENTO AS VARCHAR(2))
                   FROM Usuario_Padron WHERE ID_USUARIO IN ('0','80019')";
     $querys[7] = "select * from [dbo].[Arma_C_Propietario]";
-    $querys[8] = "select SECTOR from [dbo].[C_Sector]";
-    for ($i = 0; $i <= 8; $i++) {
+
+    for ($i = 0; $i <= 7; $i++) {
 
         $execute = sqlsrv_query($conn, $querys[$i]);        
         while ($row = sqlsrv_fetch_array($execute)) {
@@ -66,15 +61,11 @@ if ($load==1) {
                     $cve = "CVE_PROPIEDAD";
                     $desc = "PROPIEDAD";
                     break;                                            
-                case 8:
-                    $cve = "SECTOR";
-                    $desc = "SECTOR";
-                    break;                                            
             }            	
             
             $id = $row[$cve];
             $descripcion = utf8_encode($row[$desc]);
-            if($dos!=1 || $cve=="ID_USUARIO"){
+            if($dos!=1){
             $html .= "<option value='$id'> $descripcion </option>";            
             }else{
             $html .= "<option value='$descripcion'> $descripcion </option>";  

@@ -1,7 +1,6 @@
 <?php 
 	session_start();
-	//require('../conexion.php');        
-        
+	//require('../conexion.php');
 	@$dia=date('d');
 	@$mes=date('m');
 		if(@$mes==1){ $m="ENERO"; }
