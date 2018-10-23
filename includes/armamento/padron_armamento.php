@@ -26,7 +26,7 @@ $requestArray[10] = "elemResg";
 $html = "";
 $cont2= isset($_REQUEST['cont2'])? $_REQUEST['cont2'] : "" ;
 
-$addResg = isset($_REQUEST['resguardoG']) ? $_REQUEST['resguardoG'] : "";
+echo $addResg = isset($_REQUEST['resguardoG']) ? $_REQUEST['resguardoG'] : "";
 $addResIR = isset($_REQUEST['resguardoIR']) ? $_REQUEST['resguardoIR'] : "";
 
 for ($index = 0; $index < count($requestArray); $index++) {
@@ -192,8 +192,23 @@ while ($row = sqlsrv_fetch_array($execute)) {
                   <td class='hidex'><button class='btn btn-warning' value='$cont' onclick='editPadron($cont,$mat2)' ><i class='fa fa-edit'></i> Editar</button></td>                 
               </tr>
             ";
-    } else {
+    } else  if ($addResIR == "") {
         $html .= "
+              <tr id='tr$cont'>                  
+                  <td>$marca</td>
+                  <td>$stats</td>
+                  <td>$mod</td>
+                  <td>$mat</td>
+                  <td>" . utf8_encode($tipo) . "</td>
+                  <td>$calibre</td>
+                  <td><input type='checkbox' class='checkAdd' name='No$cont' id='No$cont'></td>
+                   <td style='display:none'><input id='Mat$cont' name='Mat$cont' value='$mat'></td>        
+                   <td class='hidentd'><input required='true' id='Crgad$cont' name='Crgad$cont' value='$NoCargadores' class='form form-control'></td>        
+                   <td class='hidentd'><input required='true' id='Muni$cont' name='Muni$cont' value='$cartucho' class='form form-control'></td>                                                                                                           
+              </tr>
+            ";
+    }else{
+         $html .= "
               <tr id='tr$cont'>                  
                   <td>$marca</td>
                   <td>$stats</td>

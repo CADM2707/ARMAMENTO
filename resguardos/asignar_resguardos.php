@@ -516,7 +516,7 @@ $("#ModalLoad").modal('hide');
                 .addClass("col-lg-12 col-xs-12 text-center", {duration: 1000});
         $("#controlAsign").show(1000);
         $(".hidentd").show(1000);
-        $("#unselect3").toggle();
+        $("#unselect3").toggle();        
     }
 
     $("#frmAddRsg").submit(function () {
