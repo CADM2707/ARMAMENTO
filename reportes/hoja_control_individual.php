@@ -3,8 +3,9 @@
 	require('../conexiones/sqlsrv.php');        
     $conn = connection_object();
 	
-	$id_usr = isset($_REQUEST['id_usuario'])?$_REQUEST['id_usuario']:"";
+    $id_usr = isset($_REQUEST['id_elemento'])?$_REQUEST['id_elemento']:"";
     $noArmas = isset($_REQUEST['noArmas'])?$_REQUEST['noArmas']:"";
+    $matricula = isset($_REQUEST['matricula'])?$_REQUEST['matricula']:"";
 	
  
 	
@@ -49,8 +50,12 @@
 
 	
 @$pdf=new PDF();
-
- $query="select top $noArmas * from [dbo].[Arma_Resg_Individual] where ID_ELEMENTO=$id_usr order by ID_RESGUARDO desc";
+if($matricula!=""){
+    $query="select * from [dbo].[Arma_Resg_Individual] where ID_ELEMENTO=$id_usr and matricula='$matricula' order by ID_RESGUARDO desc";
+}else{
+    $query="select top $noArmas * from [dbo].[Arma_Resg_Individual] where ID_ELEMENTO=$id_usr order by ID_RESGUARDO desc";
+}
+ 
  $restn = sqlsrv_query($conn,$query);
  while($rowtn = sqlsrv_fetch_array($restn, SQLSRV_FETCH_ASSOC)){
  

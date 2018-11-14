@@ -1,7 +1,6 @@
 <?php
 include_once '../config.php';
 include_once '../head.html';
-
 ?>     
 <style>
     .text1{
@@ -161,152 +160,152 @@ include_once '../head.html';
                                     <h4 class="titles1"><u>BUSCAR USUARIO</u></h4>                                      
                                 </div> 
                             </div>
-                            
-                                <div class="row text-center">
-                                    <div class="col-lg-4 col-xs-0 text-center"> </div> 
-                                    <div class="col-lg-2 col-xs-6 text-center">  
-                                        <label>ID ELEMENTO</label>
-                                        <input onchange="searchElement()" type="text" class="form form-control" name="id_elemE" id="id_elemE">
-                                    </div> 
-                                    <div class="col-lg-2 col-xs-6 text-center">  
-                                        <label>PLACA</label>
-                                        <input onchange="searchElement()" type="text" class="form form-control" name="placaUsrE" id="placaUsrE">
-                                    </div> 
-                                </div>
-                                <div id="usrdates" style=" display: none">
-                                    <div class="row text-center">
-                                        <div class="col-lg-2 col-xs-6 text-center">
-                                            <label>SECTOR</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="sectorRI" id="sectorRI">
-                                        </div>
-                                        <div class="col-lg-2 col-xs-6 text-center">
-                                            <label>DESTTO</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="desttoRI" id="desttoRI">
-                                        </div>
-                                        <div class="col-lg-4 col-xs-12 text-center">
-                                            <label>NOMBRE</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="nombreRI" id="nombreRI">
-                                        </div>
-                                        <div class="col-lg-2 col-xs-6 text-center">
-                                            <label>ID USUARIO</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="idUsuarioRI" id="idUsuarioRI">
-                                        </div>
-                                        <div class="col-lg-2 col-xs-6 text-center">
-                                            <label>PORTACION</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="portacionRI" id="portacionRI">
-                                        </div>
-                                    </div>
-                                    <div class="row text-center">
-                                        <div class="col-lg-2 col-xs-12 text-center">
-                                            <label>RAZÓN SOCIAL</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="RsocialRI" id="RsocialRI">
-                                        </div>
-                                        <div class="col-lg-2 col-xs-6 text-center">
-                                            <label>DOMICILIO</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="domicilioRI" id="domicilioRI">
-                                        </div>
-                                        <div class="col-lg-2 col-xs-6 text-center">
-                                            <label>COLONIA</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="coloniaRI" id="coloniaRI">
-                                        </div>
-                                        <div class="col-lg-2 col-xs-6 text-center">
-                                            <label>ENTIDAD</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="entidadRI" id="entidadRI">
-                                        </div>
-                                        <div class="col-lg-2 col-xs-6 text-center">
-                                            <label>LOCALIDAD</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="localidadRI" id="localidadRI">
-                                        </div>
-                                        <div class="col-lg-2 col-xs-6 text-center">
-                                            <label>CP</label>
-                                            <input readonly="true" type="text" class="form form-control inptRI" name="cpRI" id="cpRI">
-                                        </div>
-                                    </div><hr>                                
-                                    <div id="busquedaRI" style=" display: none;">
-                                        <div class="row text-center">
-                                            <div class="col-lg-4 col-xs-0 text-center"> </div> 
-                                            <div class="col-lg-4 col-xs-12 text-center">  
-                                                <h4 class="titles1"><u>BUSCAR ARMAS</u></h4>                                      
-                                            </div> 
-                                        </div>
-                                        <form id="formBusquedaIR">
-                                            <input type="hidden" value="addResg" name="resguardoG" id="resguardoIR"> 
-                                            <input type="hidden" value="addResgIR" name="resguardoIR" id="resguardoIR1">                                       
-                                            <input type="hidden" name="cont2" id="cont2">                                       
-                                            <div  class="row text-center">
-                                                <div class="col-lg-2 col-xs-12 text-center">  
-                                                    <label>MATRICULA</label>
-                                                    <input type="text" class="form form-control" name="matricula1" id="matricula2">
-                                                </div> 
-                                                <div class="col-lg-2 col-xs-12 text-center">  
-                                                    <label>CLASIFICACIÓN</label>
-                                                    <select  class="form form-control select2" name="clasificacion1" id="clasificacion2" style="width: 100%;">
-                                                        <option selected="selected" value="" disabled="">Opciones</option>                                                    
-                                                    </select>
-                                                </div>                                                                                                                                                                        
-                                                <div class="col-lg-2 col-xs-12 text-center">  
-                                                    <label>TIPO</label>
-                                                    <select  class="form form-control select2" name="tipo1" id="tipo2" style="width: 100%;">
-                                                        <option selected="selected" value="" disabled="">Opciones</option>                                                   
-                                                    </select>
-                                                </div>                                                                                                                                                                        
-                                                <div class="col-lg-2 col-xs-12 text-center">  
-                                                    <label>MARCA</label>
-                                                    <select  class="form form-control select2" name="marca1" id="marca2" style="width: 100%;">
-                                                        <option selected="selected" value="" disabled="">Opciones</option>                                                    
-                                                    </select>
-                                                </div>                                                                                                                                                                        
-                                                <div class="col-lg-2 col-xs-12 text-center">  
-                                                    <label>MODELO</label>
-                                                    <select  class="form form-control select2" name="modelo1" id="modelo2" style="width: 100%;">
-                                                        <option selected="selected" value="" disabled="">Opciones</option>                                                    
-                                                    </select>
-                                                </div>                                                                                                      
-                                                <div class="col-lg-1 col-xs-12 text-center">  
-                                                    <label>CALIBRE</label>
-                                                    <select  class="form form-control select2" name="calibre1" id="calibre2" style="width: 100%;">
-                                                        <option selected="selected" value="" disabled="">Opciones</option>                                                    
-                                                    </select>
-                                                </div>                                                                                                                                                                                                          
-                                                <div class="col-lg-1 col-xs-12 text-center">  
-                                                    <label>SITUACIÓN</label>
-                                                    <select  class="form form-control select2" name="situacion1" id="situacion2" style="width: 100%;">
-                                                        <option selected="selected" value="" disabled="">Opciones</option>                                                   
-                                                    </select>
-                                                </div>  
-                                            </div>
-                                            <div  class="row text-center">
-                                                <center>
-                                                    <a onclick="loadArmasIR()" class="btn btn-primary"><span class="fa fa-search"></span>&nbsp; Buscar</a>
-                                                </center>
-                                            </div>
-                                        </form>
 
-                                    </div>
-                                    <br>
-                                </div>                            
+                            <div class="row text-center">
+                                <div class="col-lg-4 col-xs-0 text-center"> </div> 
+                                <div class="col-lg-2 col-xs-6 text-center">  
+                                    <label>ID ELEMENTO</label>
+                                    <input onchange="searchElement()" type="text" class="form form-control" name="id_elemE" id="id_elemE">
+                                </div> 
+                                <div class="col-lg-2 col-xs-6 text-center">  
+                                    <label>PLACA</label>
+                                    <input onchange="searchElement()" type="text" class="form form-control" name="placaUsrE" id="placaUsrE">
+                                </div> 
+                            </div>
+                            <div id="usrdates" style=" display: none">
                                 <div class="row text-center">
-                                    <div id="hideIR">
-                                        <div id="tbPadronArmas" class="col-lg-5 col-xs-12 text-center"></div>
-                                        <div id="listado2IR" class="col-lg-2 col-xs-12 text-center"></div>
+                                    <div class="col-lg-2 col-xs-6 text-center">
+                                        <label>SECTOR</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="sectorRI" id="sectorRI">
                                     </div>
-                                    <form id="saveResIR">   
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="id_elemE" id="id_elemES">
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="placaUsrE" id="placaUsrES">
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="sectorRI" id="sectorRIS">                                                                                                                         
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="desttoRI" id="desttoRIS">                                                                                                                         
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="nombreRI" id="nombreRIS">                                                                                                                         
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="idUsuarioRI" id="idUsuarioRIS">                                                                                                                         
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="portacionRI" id="portacionRIS">                                                                                                                                                                                               
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="RsocialRI" id="RsocialRIS">                                                                                                                        
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="domicilioRI" id="domicilioRIS">                                                                                                                            
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="coloniaRI" id="coloniaRIS">                                                                                                                            
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="entidadRI" id="entidadRIS">                                                                                                                            
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="localidadRI" id="localidadRIS">                                        
-                                            <input readonly="true" type="hidden" class="form form-control inptRI" name="cpRI" id="cpRIS">                                        
-                                        <div id="listado3IR" class="col-lg-5 col-xs-12 text-center"></div>                                
+                                    <div class="col-lg-2 col-xs-6 text-center">
+                                        <label>DESTTO</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="desttoRI" id="desttoRI">
+                                    </div>
+                                    <div class="col-lg-4 col-xs-12 text-center">
+                                        <label>NOMBRE</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="nombreRI" id="nombreRI">
+                                    </div>
+                                    <div class="col-lg-2 col-xs-6 text-center">
+                                        <label>ID USUARIO</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="idUsuarioRI" id="idUsuarioRI">
+                                    </div>
+                                    <div class="col-lg-2 col-xs-6 text-center">
+                                        <label>PORTACION</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="portacionRI" id="portacionRI">
+                                    </div>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-lg-2 col-xs-12 text-center">
+                                        <label>RAZÓN SOCIAL</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="RsocialRI" id="RsocialRI">
+                                    </div>
+                                    <div class="col-lg-2 col-xs-6 text-center">
+                                        <label>DOMICILIO</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="domicilioRI" id="domicilioRI">
+                                    </div>
+                                    <div class="col-lg-2 col-xs-6 text-center">
+                                        <label>COLONIA</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="coloniaRI" id="coloniaRI">
+                                    </div>
+                                    <div class="col-lg-2 col-xs-6 text-center">
+                                        <label>ENTIDAD</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="entidadRI" id="entidadRI">
+                                    </div>
+                                    <div class="col-lg-2 col-xs-6 text-center">
+                                        <label>LOCALIDAD</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="localidadRI" id="localidadRI">
+                                    </div>
+                                    <div class="col-lg-2 col-xs-6 text-center">
+                                        <label>CP</label>
+                                        <input readonly="true" type="text" class="form form-control inptRI" name="cpRI" id="cpRI">
+                                    </div>
+                                </div><hr>                                
+                                <div id="busquedaRI" style=" display: none;">
+                                    <div class="row text-center">
+                                        <div class="col-lg-4 col-xs-0 text-center"> </div> 
+                                        <div class="col-lg-4 col-xs-12 text-center">  
+                                            <h4 class="titles1"><u>BUSCAR ARMAS</u></h4>                                      
+                                        </div> 
+                                    </div>
+                                    <form id="formBusquedaIR">
+                                        <input type="hidden" value="addResg" name="resguardoG" id="resguardoIR"> 
+                                        <input type="hidden" value="addResgIR" name="resguardoIR" id="resguardoIR1">                                       
+                                        <input type="hidden" name="cont2" id="cont2">                                       
+                                        <div  class="row text-center">
+                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                <label>MATRICULA</label>
+                                                <input type="text" class="form form-control" name="matricula1" id="matricula2">
+                                            </div> 
+                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                <label>CLASIFICACIÓN</label>
+                                                <select  class="form form-control select2" name="clasificacion1" id="clasificacion2" style="width: 100%;">
+                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                    
+                                                </select>
+                                            </div>                                                                                                                                                                        
+                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                <label>TIPO</label>
+                                                <select  class="form form-control select2" name="tipo1" id="tipo2" style="width: 100%;">
+                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                   
+                                                </select>
+                                            </div>                                                                                                                                                                        
+                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                <label>MARCA</label>
+                                                <select  class="form form-control select2" name="marca1" id="marca2" style="width: 100%;">
+                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                    
+                                                </select>
+                                            </div>                                                                                                                                                                        
+                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                <label>MODELO</label>
+                                                <select  class="form form-control select2" name="modelo1" id="modelo2" style="width: 100%;">
+                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                    
+                                                </select>
+                                            </div>                                                                                                      
+                                            <div class="col-lg-1 col-xs-12 text-center">  
+                                                <label>CALIBRE</label>
+                                                <select  class="form form-control select2" name="calibre1" id="calibre2" style="width: 100%;">
+                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                    
+                                                </select>
+                                            </div>                                                                                                                                                                                                          
+                                            <div class="col-lg-1 col-xs-12 text-center">  
+                                                <label>SITUACIÓN</label>
+                                                <select  class="form form-control select2" name="situacion1" id="situacion2" style="width: 100%;">
+                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                   
+                                                </select>
+                                            </div>  
+                                        </div>
+                                        <div  class="row text-center">
+                                            <center>
+                                                <a onclick="loadArmasIR()" class="btn btn-primary"><span class="fa fa-search"></span>&nbsp; Buscar</a>
+                                            </center>
+                                        </div>
                                     </form>
-                                </div>                            
+
+                                </div>
+                                <br>
+                            </div>                            
+                            <div class="row text-center">
+                                <div id="hideIR">
+                                    <div id="tbPadronArmas" class="col-lg-5 col-xs-12 text-center"></div>
+                                    <div id="listado2IR" class="col-lg-2 col-xs-12 text-center"></div>
+                                </div>
+                                <form id="saveResIR">   
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="id_elemE" id="id_elemES">
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="placaUsrE" id="placaUsrES">
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="sectorRI" id="sectorRIS">                                                                                                                         
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="desttoRI" id="desttoRIS">                                                                                                                         
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="nombreRI" id="nombreRIS">                                                                                                                         
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="idUsuarioRI" id="idUsuarioRIS">                                                                                                                         
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="portacionRI" id="portacionRIS">                                                                                                                                                                                               
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="RsocialRI" id="RsocialRIS">                                                                                                                        
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="domicilioRI" id="domicilioRIS">                                                                                                                            
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="coloniaRI" id="coloniaRIS">                                                                                                                            
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="entidadRI" id="entidadRIS">                                                                                                                            
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="localidadRI" id="localidadRIS">                                        
+                                    <input readonly="true" type="hidden" class="form form-control inptRI" name="cpRI" id="cpRIS">                                        
+                                    <div id="listado3IR" class="col-lg-5 col-xs-12 text-center"></div>                                
+                                </form>
+                            </div>                            
                             <div id='alertaRespuesta' style=" display: none;">
                                 <center>
                                     <div class="alert alert-warning" role="alert">
@@ -340,8 +339,8 @@ include_once '../head.html';
             </div>
             <div class='modal-footer'>
                 <center>
-                    <button id="resp1" type='button'  class='btn btn-primary' data-dismiss='modal'>ACEPTAR</button>                                                                                                              
-                    <button id="resp2" style=" display: none" onclick="clearAllForm()" type='button'  class='btn btn-primary' data-dismiss='modal'>ACEPTAR</button>                                                                                                              
+                    <a id="resp1" type='button' onclick="clearAllForm2()" class='btn btn-primary' data-dismiss='modal'>ACEPTAR</a>                                                                                                              
+                    <a id="resp2" style=" display: none" onclick="clearAllForm()" type='button'  class='btn btn-primary' data-dismiss='modal'>ACEPTAR</a>                                                                                                              
                 </center>
             </div>
         </div>
@@ -363,8 +362,8 @@ include_once '../head.html';
         loadTb();
         loadTbIR();
     });
-    
-    var noArmas=0;
+
+    var noArmas = 0;
     function loadTb() {
         $("#listado3").html("<center><H4><label> <span class='fa fa-plus' style=' color: #114D87'></span> LISTADO ASIGNAR RESGUARDOS</label></H4></center>\n\
         \n\<a id='select2' class='btn btn-primary' onclick='selectAll(2)'><span class='fa fa-sort-amount-asc'></span>&nbsp;Marcar todos</a>\n\
@@ -452,7 +451,7 @@ include_once '../head.html';
                 $(".hidentd").hide(1000);
             }
         });
-$("#ModalLoad").modal('hide');
+        $("#ModalLoad").modal('hide');
         return false;
 
     });
@@ -512,12 +511,18 @@ $("#ModalLoad").modal('hide');
     }
 
     function saveResGen() {
-        $("#contentAsign").hide(1000);
+        $("#ModalLoad").modal('show');
+        $("#contentAsign").hide();
+//        $("#listado3").removeClass("col-lg-5 col-xs-12 text-center")
+//                      .addClass("col-lg-12 col-xs-12 text-center");
+              
         $("#listado3").stop(true, false).removeClass("col-lg-5 col-xs-12 text-center")
-                .addClass("col-lg-12 col-xs-12 text-center", {duration: 1000});
-        $("#controlAsign").show(1000);
-        $(".hidentd").show(1000);
-        $("#unselect3").toggle();        
+                        .addClass("col-lg-12 col-xs-12 text-center");
+     
+        $("#controlAsign").show();
+        $(".hidentd").show();
+        $("#unselect3").toggle();
+           close();
     }
 
     $("#frmAddRsg").submit(function () {
@@ -600,9 +605,9 @@ $("#ModalLoad").modal('hide');
                     $("#entidadRIS").val(data[10]);
                     $("#localidadRIS").val(data[11]);
                     $("#cpRIS").val(data[12]);
-                    
+
                     $("#usrdates").show(1000);
-    
+
                     nextDispPadArma()
                 } else {
                     $("#alertaRespuesta").show();
@@ -648,7 +653,7 @@ $("#ModalLoad").modal('hide');
     }
 
     function loadArmasIR() {
-        $("#idUsr").val($("#id_elemE").val());        
+        $("#idUsr").val($("#id_elemE").val());
         load();
         var url = "<?php echo BASE_URL; ?>includes/armamento/padron_armamento.php";
         $.ajax({
@@ -661,7 +666,7 @@ $("#ModalLoad").modal('hide');
                 $("#tbPadronArmas").html(data);
                 $("#ModalLoad").modal('hide');
                 $("#listado3IR").show();
-                $("#listado2IR").show();                                   
+                $("#listado2IR").show();
             }
         });
         $("#ModalLoad").modal('hide');
@@ -720,25 +725,25 @@ $("#ModalLoad").modal('hide');
         <a id='continueIR' class='btn btn-primary' style='display:none' onclick='saveResGenIR()'><span class='fa  fa-play'></span>&nbsp;&nbsp;Continuar</a><br><br>");
     }
 
-    function bgColorTrIR() {          
+    function bgColorTrIR() {
+
         $('#tbPadronArmas .checkAdd:checked').each(
-                       
-              function () {
-                    
+                function () {
+
                     var tr = $(this).parents("tr").appendTo("#padronSearch2IR tbody");
-                    var idTr = parseInt($(this).attr("id").substring(2));                                         
-                    var val=$("#nofilas").val();                                            
-                    if(val<idTr){
-                                               
-                        $("#nofilas").val(idTr);                        
+                    var idTr = parseInt($(this).attr("id").substring(2));
+                    var val = $("#nofilas").val();
+                    if (val < idTr) {
+
+                        $("#nofilas").val(idTr);
                     }
                 }
-            );
-    
+        );
+
         $("#select1IR").show();
-        $("#unselect1IR").hide();        
+        $("#unselect1IR").hide();
         var nFilas = $("#padronSearch2IR tr").length - 1;
-        
+
         if (nFilas > 0) {
             $("#continueIR").show();
 //            $("#nofilas").val(nFilas);
@@ -759,7 +764,7 @@ $("#ModalLoad").modal('hide');
         if (nFilas == 0) {
             $("#continueIR").hide();
             console.log(nFilas);
-        }else{
+        } else {
             $("#nofilas").val(nFilas);
             $("#cont2").val(nFilas);
         }
@@ -790,18 +795,19 @@ $("#ModalLoad").modal('hide');
     }
 
     function saveResGenIR() {
+        $("#ModalLoad").modal('show');
         $("#adicionalIR").show();
-        $("#hideIR").hide(1000);
-        $("#listado3IR").stop(true, false).removeClass("col-lg-5 col-xs-12 text-center")
-                .addClass("col-lg-12 col-xs-12 text-center", {duration: 1000});
-        $(".hidentd").show(1000);
+        $("#hideIR").hide();
+        $(".hidentd").show();
         $("#unselect3IR").toggle();
-        
+        $("#listado3IR").stop(true, false).removeClass("col-lg-5 col-xs-12 text-center")
+                        .addClass("col-lg-12 col-xs-12 text-center");
+        close();
     }
-    
-    
-    $("#saveResIR").submit(function (){        
-        
+
+
+    $("#saveResIR").submit(function () {
+
         load();
         var url = "<?php echo BASE_URL; ?>includes/armamento/add_resguardo_Individual.php";
         $.ajax({
@@ -811,26 +817,34 @@ $("#ModalLoad").modal('hide');
             data: $("#saveResIR").serialize(),
             success: function (data)
             {
-                if ($.isNumeric(data) && data!=0 ) {
+                if ($.isNumeric(data) && data != 0) {
                     $("#responsePago2").html("<div class='alert alert-success' role='alert'><h4 style='display:inline'>Resguardo asignado correctamente!</h4></div>");
                     $("#controlAsign").hide(1000);
                     $("#listado3").hide(1000);
                     $("#resp2").toggle();
-                    $("#resp1").toggle();  
-                    noArmas=data;
-                } else if(data==0) {
+                    $("#resp1").toggle();
+                    noArmas = data;
+                } else if (data == 0) {
                     $("#responsePago2").html("<div class='alert alert-danger' role='alert'><h4 style='display:inline'>El resguardo no se ha asignado!</h4></div>");
                 }
-                 $("#respuesta").modal('show');
-                 $("#ModalLoad").modal('hide');
+                $("#respuesta").modal('show');
+                $("#ModalLoad").modal('hide');
             }
-        });        
+        });
         return false;
     });
-    
-    function clearAllForm(){
-         window.open ("../reportes/hoja_control_individual.php?id_usuario='"+$("#id_elemE").val()+"'&noArmas="+noArmas ,'_blank'); 
-         window.location.href = "asignar_resguardos.php";
+
+    function clearAllForm() {
+        window.open("../reportes/hoja_control_individual.php?id_elemento=" + $("#id_elemE").val() + "&noArmas=" + noArmas, '_blank');
+        window.location.href = "asignar_resguardos.php";
+    }
+    function clearAllForm2() {
+        window.open("../reportes/resguardo_armamento_sector.php?id_elemento=" + $("#id_elemE").val() + "&noArmas=" + noArmas, '_blank');
+        window.location.href = "asignar_resguardos.php";
+    }
+
+    function close() {
+        $("#ModalLoad").modal('hide');
     }
 </script>
 

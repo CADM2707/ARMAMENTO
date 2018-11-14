@@ -118,7 +118,7 @@ if ($addResg == "") {
                                 <th>MUNICIONES</th>     
                                 <th>SECTOR RESGUARDANTE</th>
                                 <th>ID USUARIO RESGUARDANTE</th>
-                                <th class='hidex'>OPCIONES</th>";
+                                <th class='hidex hidez'>OPCIONES</th>";
 } else {
     $html .= "           <center><H4><label> <span class='fa fa-list' style=' color: #114D87'></span> LISTADO PADRÓN DE ARMAMENTO</label></H4></center>";
     if ($addResIR == "") {
@@ -172,6 +172,7 @@ while ($row = sqlsrv_fetch_array($execute)) {
     $cartucho = $row["CARTUCHOS"];
     $NoCargadores = $row["NOCARGADORES"];
 
+    
     if ($addResg == "") {
         $html .= "
               <tr>
@@ -188,8 +189,15 @@ while ($row = sqlsrv_fetch_array($execute)) {
                   <td>$cargadores</td>
                   <td>$municiones</td>  
                   <td>$sec</td>
-                  <td>$usuario</td>
-                  <td class='hidex'><button class='btn btn-warning' value='$cont' onclick='editPadron($cont,$mat2)' ><i class='fa fa-edit'></i> Editar</button></td>                 
+                  <td class='hidex'> 
+                    <button type='button' class='btn btn-primary ' data-toggle='modal' onclick='dispElementAsig(\"$mat\")' data-target='#modal-default'>
+                        <span class='fa fa-eye'></span>&nbsp;Ver
+                    </button>
+                  </td>
+                  <td class='hidey' style='display: none'> 
+                    $usuario
+                  </td>
+                  <td class='hidex hidez'><a class='btn btn-warning' value='$cont' onclick='editPadron($cont,$mat2)' ><i class='fa fa-edit'></i> Editar</a></td>                 
               </tr>
             ";
     } else  if ($addResIR == "") {

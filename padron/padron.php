@@ -28,6 +28,14 @@ include_once '../head.html';
     .textFont{
         font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif ;
     }
+    .modal {
+
+        overflow-y: auto;
+    }
+    .img2 {
+        border-radius: 8px;
+        width: 100px !important;
+    }
 </style>   
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>/bower_components/select2/dist/css/select2.min.css">   
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">               
@@ -213,7 +221,7 @@ include_once '../head.html';
 
                             <hr>                                  
                             <div id="cuentasUsuario"></div>
-                            <div class="modal fade" id="updateArma" role="dialog" style="margin: 40px;">
+                            <div class="modal fade" id="updateArma" role="dialog" >
                                 <div class="modal-dialog mymodal modal-lg" style=" width: 100% !important">
                                     <!-- Modal content-->
                                     <div class="modal-content">
@@ -223,71 +231,73 @@ include_once '../head.html';
                                                 <h4 style=" color: white; font-weight: 600"><i class='fa fa-edit'></i> &nbsp;EDITAR ARMA.</h4>
                                             </span>
                                         </div>   
-                                        <div class="modal-body">                            
-                                            <div class="col-md-12">
-                                                <form id='updateArmas' name='updateArmas' method="POST"><div class="row text-center">   
-                                                        <div class="col-lg-1 col-xs-0  text-center"></div>  
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>MATRICULA</label>
-                                                            <input readonly="true" class="form form-control" type="text" name="matricula2" id="matricula2">
-                                                        </div>                                                                                                                                                                        
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>CLASIFICACIÓN</label>
-                                                            <select class="form form-control" name="clasificacion2" id="clasificacion2" style="width: 100%;">
-                                                                <option selected="selected" value="" disabled="">Opciones</option>                                                    
-                                                            </select>
-                                                        </div>                                                                                                                                                                        
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>TIPO</label>
-                                                            <select class="form form-control" name="tipo2" id="tipo2" style="width: 100%;">
-                                                                <option selected="selected" value="" disabled="">Opciones</option>                                                   
-                                                            </select>
-                                                        </div>                                                                                                                                                                        
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>MARCA</label>
-                                                            <select class="form form-control" name="marca2" id="marca2" style="width: 100%;">
-                                                                <option selected="selected" value="" disabled="">Opciones</option>                                                    
-                                                            </select>
-                                                        </div>                                                                                                                                                                        
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>MODELO</label>
-                                                            <select class="form form-control" name="modelo2" id="modelo2" style="width: 100%;">
-                                                                <option selected="selected" value="" disabled="">Opciones</option>                                                    
-                                                            </select>
-                                                        </div>                                                                                                                                                                                                                                                                                                                                                                                                        
-                                                    </div>
-                                                    <div class="row text-center">
-                                                        <div class="col-lg-1 col-xs-0  text-center"></div>  
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>RFAFE</label>
-                                                            <input class="form form-control" type="text" name="rfafe2" id="rfafe2">
+                                        <div class="modal-body">
+                                            <div id="">
+                                                <div class="col-md-12">
+                                                    <form id='updateArmas' name='updateArmas' method="POST"><div class="row text-center">   
+                                                            <div class="col-lg-1 col-xs-0  text-center"></div>  
+                                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                                <label>MATRICULA</label>
+                                                                <input readonly="true" class="form form-control" type="text" name="matricula2" id="matricula2">
+                                                            </div>                                                                                                                                                                        
+                                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                                <label>CLASIFICACIÓN</label>
+                                                                <select class="form form-control" name="clasificacion2" id="clasificacion2" style="width: 100%;">
+                                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                    
+                                                                </select>
+                                                            </div>                                                                                                                                                                        
+                                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                                <label>TIPO</label>
+                                                                <select class="form form-control" name="tipo2" id="tipo2" style="width: 100%;">
+                                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                   
+                                                                </select>
+                                                            </div>                                                                                                                                                                        
+                                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                                <label>MARCA</label>
+                                                                <select class="form form-control" name="marca2" id="marca2" style="width: 100%;">
+                                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                    
+                                                                </select>
+                                                            </div>                                                                                                                                                                        
+                                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                                <label>MODELO</label>
+                                                                <select class="form form-control" name="modelo2" id="modelo2" style="width: 100%;">
+                                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                    
+                                                                </select>
+                                                            </div>                                                                                                                                                                                                                                                                                                                                                                                                        
                                                         </div>
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>CALIBRE</label>
-                                                            <select class="form form-control" name="calibre2" id="calibre2" style="width: 100%;">
-                                                                <option selected="selected" value="" disabled="">Opciones</option>                                                    
-                                                            </select>
+                                                        <div class="row text-center">
+                                                            <div class="col-lg-1 col-xs-0  text-center"></div>  
+                                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                                <label>RFAFE</label>
+                                                                <input class="form form-control" type="text" name="rfafe2" id="rfafe2">
+                                                            </div>
+                                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                                <label>CALIBRE</label>
+                                                                <select class="form form-control" name="calibre2" id="calibre2" style="width: 100%;">
+                                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                    
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                                <label>PROPIETARIO</label>
+                                                                <select class="form form-control " name="propietario2" id="propietario2" style="width: 100%;">
+                                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                    
+                                                                </select>
+                                                            </div>                                                                                                                                                                        
+                                                            <div class="col-lg-2 col-xs-12 text-center">  
+                                                                <label>SITUACIÓN</label>
+                                                                <select class="form form-control " name="situacion2" id="situacion2" style="width: 100%;">
+                                                                    <option selected="selected" value="" disabled="">Opciones</option>                                                   
+                                                                </select>
+                                                            </div>                                                           
                                                         </div>
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>PROPIETARIO</label>
-                                                            <select class="form form-control " name="propietario2" id="propietario2" style="width: 100%;">
-                                                                <option selected="selected" value="" disabled="">Opciones</option>                                                    
-                                                            </select>
-                                                        </div>                                                                                                                                                                        
-                                                        <div class="col-lg-2 col-xs-12 text-center">  
-                                                            <label>SITUACIÓN</label>
-                                                            <select class="form form-control " name="situacion2" id="situacion2" style="width: 100%;">
-                                                                <option selected="selected" value="" disabled="">Opciones</option>                                                   
-                                                            </select>
-                                                        </div>                                                           
-                                                    </div>
-                                                    <hr>
-                                                    <div class="row text-center">
-                                                        <a class='btn btn-success' value='' onclick='updateConfirma()' ><i class='fa fa-refresh'></i> ACTUALIZAR</a>                                                        
-                                                        <button type="button" class="btn btn-warning" data-dismiss="modal" ><i class="fa fa-close" ></i> CERRAR</button>
-                                                    </div>
-                                                </form>
-                                            </div>                            
+                                                        <hr>
+                                                        <div class="row text-center">
+                                                            <a class='btn btn-success' value='' onclick='updateConfirma()' ><i class='fa fa-refresh'></i> ACTUALIZAR</a>                                                        
+                                                            <button type="button" class="btn btn-warning" data-dismiss="modal" ><i class="fa fa-close" ></i> CERRAR</button>
+                                                        </div>
+                                                    </form>
+                                                </div>  
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <!--                <button type="button" class="close" data-dismiss="modal" style=" background-color: black;">&nbsp&nbsp;&times;&nbsp&nbsp;</button>-->
@@ -295,6 +305,7 @@ include_once '../head.html';
                                     </div>
                                 </div>
                             </div>
+                            <div id="usrresguardo" style=" display: none"></div>
                             <div class='modal fade' id='pregunta' tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
                                 <div class='modal-dialog' role='document'>
                                     <div class='modal-content'>
@@ -342,24 +353,44 @@ include_once '../head.html';
                     <!-- /.tab-content -->
                 </div>
             </div>
+            <!--Modal usuarios-->            
         </section>
         <!-- /.content -->
     </div>
     <!-- /.container -->    
 </div>      
 <?php include_once '../footer.html'; ?>
-
-<script>    
+<div class="modal fade in" id="modal-default">
+    <div class="modal-dialog modal-lg" role="dialog" style=" width: 100% !important">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header title_left" style=" background-color: #2C3E50;">
+                <button type="button" class="close" data-dismiss="modal" style=" background-color: white;">&nbsp&nbsp;&times;&nbsp&nbsp;</button>
+                <span style="text-align: center">
+                    <h4 style=" color: white; font-weight: 600"><i class='fa fa-user'></i> &nbsp;RESGUARDO DE ARMAMENTO.</h4>
+                </span>
+            </div>   
+            <div class="modal-body">
+                <div id="elementsData" class=" table-responsive"></div>
+            </div>
+            <div class="modal-footer">
+                <!--                <button type="button" class="close" data-dismiss="modal" style=" background-color: black;">&nbsp&nbsp;&times;&nbsp&nbsp;</button>-->
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<script>
     $('.select2').select2();
     $(document).ready(function () {
         loadsec();
-        loadsecsearch();        
+        loadsecsearch();
     });
 
     var $alerta = $("#alert");
     var $msg = $('#msg');
     $alerta.hide();
-    
+
     function loadsec() {
 
         var url = "<?php echo BASE_URL; ?>includes/catalogos/selectores.php";
@@ -380,7 +411,7 @@ include_once '../head.html';
                 $("#situacion").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[5]);
                 $("#areaRes").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[6]);
                 $("#propietario").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[7]);
-                
+
                 $("#clasificacion2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[0]);
                 $("#tipo2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[1]);
                 $("#marca2").html("<option selected='selected' value='' disabled=''>Opciones</option>" + data[2]);
@@ -432,32 +463,6 @@ include_once '../head.html';
             success: function (data)
             {
                 $("#padronArmamento").html(data);
-                $('#padronSearch').DataTable({
-                    "language": {
-                        "sProcessing": "Procesando...",
-                        "sLengthMenu": "Mostrar _MENU_ registros",
-                        "sZeroRecords": "No se encontraron resultados",
-                        "sEmptyTable": "Ningún dato disponible en esta tabla (Sin resultados de busqueda)",
-                        "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                        "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                        "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                        "sInfoPostFix": "",
-                        "sSearch": "Buscar:",
-                        "sUrl": "",
-                        "sInfoThousands": ",",
-                        "sLoadingRecords": "Cargando...",
-                        "oPaginate": {
-                            "sFirst": "Primero",
-                            "sLast": "Último",
-                            "sNext": "Siguiente",
-                            "sPrevious": "Anterior"
-                        },
-                        "oAria": {
-                            "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                        }
-                    }
-                });
                 $("#ModalLoad").modal('hide');
             }
         });
@@ -466,42 +471,42 @@ include_once '../head.html';
 
     });
 
-    function editPadron(id,mat) {
+    function editPadron(id, mat) {
         var url = "<?php echo BASE_URL; ?>includes/armamento/buscarArma.php";
         $.ajax({
             type: "POST",
             url: url,
             dataType: "json",
             data: {
-                matricula:mat
+                matricula: mat
             },
             success: function (data)
-            {                
+            {
                 $("#matricula2").val(data[1]);
                 $("#tipo2 option:selected").removeAttr("selected");
-                $("#tipo2 option[value="+ data[2] +"]").attr("selected",true);
+                $("#tipo2 option[value=" + data[2] + "]").attr("selected", true);
                 $("#calibre2 option:selected").removeAttr("selected");
-                $("#calibre2 option[value="+ data[3] +"]").attr("selected",true);          
+                $("#calibre2 option[value=" + data[3] + "]").attr("selected", true);
                 $("#rfafe2").val(data[4]);
                 $("#marca2 option:selected").removeAttr("selected");
-                $("#marca2 option[value="+ data[5] +"]").attr("selected",true);
+                $("#marca2 option[value=" + data[5] + "]").attr("selected", true);
                 $("#clasificacion2 option:selected").removeAttr("selected");
-                $("#clasificacion2 option[value="+ data[6] +"]").attr("selected",true);
+                $("#clasificacion2 option[value=" + data[6] + "]").attr("selected", true);
                 $("#modelo2 option:selected").removeAttr("selected");
-                $("#modelo2 option[value="+ data[7] +"]").attr("selected",true);
+                $("#modelo2 option[value=" + data[7] + "]").attr("selected", true);
                 $("#propietario2 option:selected").removeAttr("selected");
-                $("#propietario2 option[value="+ data[8] +"]").attr("selected",true);
+                $("#propietario2 option[value=" + data[8] + "]").attr("selected", true);
                 $("#situacion2 option:selected").removeAttr("selected");
-                $("#situacion2 option[value="+ data[9] +"]").attr("selected",true);
+                $("#situacion2 option[value=" + data[9] + "]").attr("selected", true);
                 $("#updateArma").modal("show");
             }
         });
-        return false;                
+        return false;
     }
 
-    $("#addArmamento").submit(function (){
-        
-       load();
+    $("#addArmamento").submit(function () {
+
+        load();
         var url = "<?php echo BASE_URL; ?>includes/armamento/add_arma.php";
         $.ajax({
             type: "POST",
@@ -509,61 +514,60 @@ include_once '../head.html';
             dataType: "html",
             data: $("#addArmamento").serialize(),
             success: function (data)
-            {                                  
-                    if(data==1){
-                         $("#addArmamento").trigger("reset");   
-                         loadsec();
-                         $("#ModalLoad").modal('hide');
-                        $alerta.removeClass();
-                        $alerta
-                                .addClass('alert')
-                                .addClass('alert-success')
-                                .addClass('alert-dismissible');
-                        $msg.text('!Registro agregado correctamente!');
-                        $alerta.show();
-                        setTimeout(function () {
-                            $alerta.hide();                        
-                        }, 3000);                   
-                    }
-                    if(data==2){                        
-                        $alerta.removeClass();
-                        $alerta
-                                .addClass('alert')
-                                .addClass('alert-warning')
-                                .addClass('alert-dismissible');
-                        $msg.text('!La matricula ya existe!');
-                        $alerta.show();
-                        setTimeout(function () {
-                            $alerta.hide();                        
-                        }, 3000);
-                    }else if(data==3){                        
-                        $alerta.removeClass();
-                        $alerta
-                                .addClass('alert')
-                                .addClass('alert-danger')
-                                .addClass('alert-dismissible');
-                        $msg.text('!Ocurrio un error!');
-                        $alerta.show();
-                        setTimeout(function () {
-                            $alerta.hide();                        
-                        }, 3000);
-                    }        
-                    
+            {
+                if (data == 1) {
+                    $("#addArmamento").trigger("reset");
+                    loadsec();
+                    $("#ModalLoad").modal('hide');
+                    $alerta.removeClass();
+                    $alerta
+                            .addClass('alert')
+                            .addClass('alert-success')
+                            .addClass('alert-dismissible');
+                    $msg.text('!Registro agregado correctamente!');
+                    $alerta.show();
+                    setTimeout(function () {
+                        $alerta.hide();
+                    }, 3000);
+                }
+                if (data == 2) {
+                    $alerta.removeClass();
+                    $alerta
+                            .addClass('alert')
+                            .addClass('alert-warning')
+                            .addClass('alert-dismissible');
+                    $msg.text('!La matricula ya existe!');
+                    $alerta.show();
+                    setTimeout(function () {
+                        $alerta.hide();
+                    }, 3000);
+                } else if (data == 3) {
+                    $alerta.removeClass();
+                    $alerta
+                            .addClass('alert')
+                            .addClass('alert-danger')
+                            .addClass('alert-dismissible');
+                    $msg.text('!Ocurrio un error!');
+                    $alerta.show();
+                    setTimeout(function () {
+                        $alerta.hide();
+                    }, 3000);
+                }
+
                 $("#ModalLoad").modal('hide');
             }
         });
 
         return false;
     });
-    
-    function updateConfirma(){        
+
+    function updateConfirma() {
         $("#responsePago").text("¿Está seguro de guardar los cambios realizados?");
-        $("#pregunta").modal("show");        
+        $("#pregunta").modal("show");
     }
 
-    function updatearma(){
-        
-        
+    function updatearma() {
+
         load();
         var url = "<?php echo BASE_URL; ?>includes/armamento/update_armas.php";
         $.ajax({
@@ -572,22 +576,39 @@ include_once '../head.html';
             dataType: "html",
             data: $("#updateArmas").serialize(),
             success: function (data)
-            {                            
-                $("#updateArma").modal('hide');                
-                $("#ModalLoad").modal('hide');   
-                
-                if(data==1){
-                    $("#responsePago2").text("Registro actualizado correctamente!");                
-                } else{
-                    $("#responsePago2").text("El registro no se ha actualizado!");                
+            {
+                $("#updateArma").modal('hide');
+                $("#ModalLoad").modal('hide');
+
+                if (data == 1) {
+                    $("#responsePago2").text("Registro actualizado correctamente!");
+                } else {
+                    $("#responsePago2").text("El registro no se ha actualizado!");
                 }
                 $("#respuesta").modal("show");
             }
         });
 
         return false;
+    }
 
+    function dispElementAsig(matriclua) {
+        
+        var url = "<?php echo BASE_URL; ?>includes/armamento/resguardo_de_armas.php";
+        $.ajax({
+            type: "POST",
+            url: url,
+            dataType: "html",
+            data: {
+                matricula: matriclua
+            },
+            success: function (data)
+            {                
+                $("#elementsData").html(data);
+            }
+        });
 
+        return false;
     }
 </script>
 

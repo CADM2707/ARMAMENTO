@@ -3,7 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ARMAMENTO/index.php</file>
+            <file>file:/C:/xampp/htdocs/ARMAMENTO/reportes/arma.php</file>
+            <file>file:/C:/xampp/htdocs/ARMAMENTO/includes/armamento/resguardo_de_armas.php</file>
+            <file>file:/C:/xampp/htdocs/ARMAMENTO/reportes/usuarios.php</file>
+            <file>file:/C:/xampp/htdocs/ARMAMENTO/head.html</file>
+            <file>file:/C:/xampp/htdocs/ARMAMENTO/includes/armamento/padron_armamento.php</file>
+            <file>file:/C:/xampp/htdocs/ARMAMENTO/includes/resguardos/resguardos_usuarios.php</file>
+            <file>file:/C:/xampp/htdocs/ARMAMENTO/padron/padron.php</file>
+            <file>file:/C:/xampp/htdocs/ARMAMENTO/resguardos/asignar_resguardos.php</file>
+            <file>file:/C:/xampp/htdocs/ARMAMENTO/footer.html</file>
         </group>
     </open-files>
 </project-private>

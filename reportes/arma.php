@@ -28,6 +28,14 @@ include_once '../head.html';
     .textFont{
         font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif ;
     }
+        .modal {
+
+        overflow-y: auto;
+    }
+    .img2 {
+        border-radius: 8px;
+        width: 100px !important;        
+    }
 </style>   
 <link rel="stylesheet" href="<?php echo BASE_URL; ?>/bower_components/select2/dist/css/select2.min.css">   
 <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">               
@@ -35,7 +43,7 @@ include_once '../head.html';
     <div class="container-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header" style=" background-color: white; border-bottom: 1px solid #B9B9B9;  box-shadow: 1px 1px 5px #999;">
-            <h1><span><label class="gray"> <span class="fa fa-list"></span></label></span> Reporte - Resguardos generales</h1>            
+            <h1><span><label class="gray"> <span class="fa fa-rocket"></span></label></span> Reporte - Resguardo armas</h1>            
         </section>        
         <!-- Main content -->
         <section class="content" style=" background-color: white;" >          
@@ -112,6 +120,28 @@ include_once '../head.html';
     <!-- /.container -->
 </div>      
 <?php include_once '../footer.html'; ?>
+
+<div class="modal fade in" id="modal-default">
+    <div class="modal-dialog modal-lg" role="dialog" style=" width: 100% !important">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header title_left" style=" background-color: #2C3E50;">
+                <button type="button" class="close" data-dismiss="modal" style=" background-color: white;">&nbsp&nbsp;&times;&nbsp&nbsp;</button>
+                <span style="text-align: center">
+                    <h4 style=" color: white; font-weight: 600"><i class='fa fa-user'></i> &nbsp;RESGUARDO DE ARMAMENTO.</h4>
+                </span>
+            </div>   
+            <div class="modal-body">
+                <div id="elementsData" class=" table-responsive"></div>
+            </div>
+            <div class="modal-footer">
+                <!--                <button type="button" class="close" data-dismiss="modal" style=" background-color: black;">&nbsp&nbsp;&times;&nbsp&nbsp;</button>-->
+            </div>
+        </div>
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
 <script>
     $('.select2').select2();
     $(document).ready(function () {
@@ -155,6 +185,9 @@ include_once '../head.html';
                 if(nFilas>0){
                     $("#exportar").removeClass('disabled');
                     $("#exportar").show(1000);
+                    $(".hidex").show();
+                    $(".hidez").hide();
+                    $(".hidey").hide();
                 }else{
                     $("#exportar").addClass('disabled');
                     $("#exportar").hide(1000);
@@ -242,6 +275,28 @@ include_once '../head.html';
         tmpElemento.download = 'Reporte_Global.xls';
         // Simulamos el click al elemento creado para descargarlo
         tmpElemento.click();
+    }
+        function dispElementAsig(matriclua) {
+        var url = "<?php echo BASE_URL; ?>includes/armamento/resguardo_de_armas.php";
+        $.ajax({
+            type: "POST",
+            url: url,
+            dataType: "html",
+            data: {
+                matricula: matriclua,
+                armas:1
+            },
+            success: function (data)
+            {
+                if(data!=0){                    
+                    $("#elementsData").html(data);                    
+                }else{
+                    $("#elementsData").html("<div class='alert alert-warning' role='alert'><center><b>  No se encontraron resultados!</center><b></div>");
+               }
+            }
+        });
+
+        return false;
     }
 </script>
 

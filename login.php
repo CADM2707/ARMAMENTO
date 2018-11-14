@@ -76,7 +76,7 @@ isset($_SESSION['USUARIO']) ? header("Location: index.php") : NULL;
                                     </div>                                   
                                     <br>
                                     <div class="text-center">
-                                        <h3 style=" color: #73879C; display: inline"><i class=""></i> SISFAC</h3>
+                                        <h3 style=" color: #73879C; display: inline"><i class=""></i> ARCO</h3>
                                         
                                         <div class="pull-center">
                                             <a style="text-decoration: none;" href="sectores.pa.cdmx.gob.mx:3128/intranet/intranet.php">Policía Auxiliar de la Ciudad de México.</a>
